@@ -5,7 +5,7 @@
         <active>true</active>
         <advanced_condition/>
         <affected_field_on_event/>
-        <category/>
+        <category display_value="Mobile Assist" name="Mobile Assist">a54222061b15fb40bc3e2fcdee4bcba6</category>
         <collection>x_idss_mobile_a_p_announcement</collection>
         <condition/>
         <content_type>text/html</content_type>
@@ -57,7 +57,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e417138edbaf7f00d475f9afaa961942</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>MA_Pro_Push_Announcement</sys_name>
         <sys_overrides/>
         <sys_package display_value="Mobile Assist Pro" source="x_idss_mobile_a_p">23949784db6b3b00d475f9afaa96195a</sys_package>
@@ -65,7 +65,7 @@
         <sys_scope display_value="Mobile Assist Pro">23949784db6b3b00d475f9afaa96195a</sys_scope>
         <sys_update_name>sysevent_email_action_e417138edbaf7f00d475f9afaa961942</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-08-30 11:21:51</sys_updated_on>
+        <sys_updated_on>2019-11-17 14:39:02</sys_updated_on>
         <sys_version>2</sys_version>
         <template/>
         <type>email</type>
