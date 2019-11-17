@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_idss_mobile_a_p.MA_Pro_Announcement_Util</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>MA_Pro_Announcement_Util</name>
+        <script><![CDATA[var MA_Pro_Announcement_Util = Class.create();
+MA_Pro_Announcement_Util.prototype = {
+	initialize: function(grAnnouncement) {
+		this.grAnnouncement = null;
+		if(grAnnouncement != undefined && grAnnouncement.isValidRecord())
+			this.grAnnouncement = grAnnouncement;
+		this.recipients = [];
+		this.notificationType = {
+			"push" : "b84ed38cdb6b3b00d475f9afaa961984",
+			"email" : "672e978cdb6b3b00d475f9afaa9619f4"
+		};
+		this.eventRegistry = {
+			"email" : 'x_idss_mobile_a_p.announcement_email',
+			"push" : 'x_idss_mobile_a_p.announcement_push'
+		};
+		this.selectedAnnouncementType = '';
+		this.successMsg = 'Announcement sent.';
+	},
+	sendAnnouncement: function() {
+		try {
+			this._prepareRecipientList();
+			if(this.selectedAnnouncementType == 'email_and_push' || this.selectedAnnouncementType == 'email'){
+				for(var counter = 0; counter < this.recipients.length; counter++){
+					gs.eventQueue(this.eventRegistry.email, this.grAnnouncement, this.recipients[counter], "");	
+				}
+			}
+			if(this.selectedAnnouncementType == 'email_and_push' || this.selectedAnnouncementType == 'push'){
+				for(var counter = 0; counter < this.recipients.length; counter++){
+					gs.eventQueue(this.eventRegistry.push, this.grAnnouncement, this.recipients[counter], "");	
+				}
+			}
+			gs.addInfoMessage( this.successMsg );
+		} catch(error) {
+			gs.error(error);
+			gs.addErrorMessage(error);
+		}
+	},
+	_prepareRecipientList : function (){
+		this._getAnnouncementType();
+		this._getUsers(); this._getGroupMembers(); this._getUsersWithRoles();
+		if(this.recipients.length == 0) {
+			throw 'No recipient found. Please select users/group/roles from "who will receive" section.';
+		}
+	},
+	_getAnnouncementType : function(){
+		var type = this.grAnnouncement.type;
+		if(type.includes(this.notificationType.push) && 
+		   type.includes(this.notificationType.email)){
+			this.selectedAnnouncementType = "email_and_push";
+		}
+		else if(type.includes(this.notificationType.push)){
+			this.selectedAnnouncementType = "push";
+		}
+		else if(type.includes(this.notificationType.email)){
+			this.selectedAnnouncementType = "email";
+		}
+	},
+	_getUsers : function(){
+		if(this.grAnnouncement.users){
+			var condition = this.grAnnouncement.condition;
+			var grSysUser = new GlideRecord(this.grAnnouncement.table);
+			
+			if(!gs.nil(condition)){
+				grSysUser.addEncodedQuery(condition);
+				grSysUser.query();
+				while(grSysUser.next()){
+					this.recipients.push(grSysUser.getUniqueValue());
+				}
+			}
+		}
+	},
+	_getGroupMembers: function(getMembers) {
+		var groups_memberNotIncluded = [];
+		var groups = this.grAnnouncement.group;
+		var isPushNotification = 
+			(this.selectedAnnouncementType == "push" || 
+			 this.selectedAnnouncementType == "email_and_push");
+		if(!gs.nil(groups)){
+			groups = groups.split(",");
+			
+			for(var cnt in groups){
+// 				if (isPushNotification){
+// 					var grGroup = new GlideRecord('sys_user_group');
+// 					if(grGroup.get(groups[cnt])){
+// 						if(!grGroup.include_members){
+// 							groups_memberNotIncluded.push(grGroup.getValue('name'));
+// 						}
+// 					}
+// 				}
+				if(getMembers) {
+					var grGroupMembers = new GlideRecord('sys_user_grmember');
+					grGroupMembers.addQuery('group', groups[cnt]);
+					grGroupMembers.query();
+					while(grGroupMembers.next()){
+						this.recipients.push(grGroupMembers.getValue('user'));
+					}
+				}else{
+					this.recipients.push(groups[cnt]);
+				}
+			}
+			if(isPushNotification && groups_memberNotIncluded.length > 0){
+				throw "Following group/s should have 'Include Members' field set to true for push notification <br/>" + groups_memberNotIncluded.toString();
+			}
+		}
+	},
+	_getUsersWithRoles: function(){
+		var roles = this.grAnnouncement.roles;
+		if(!gs.nil(roles)){
+			roles = roles.split(",");
+			for(var cnt in roles){
+				var grUserRoles = new GlideRecord('sys_user_has_role');
+				grUserRoles.addQuery('role', roles[cnt]);
+				grUserRoles.addQuery('state','active');
+				grUserRoles.query();
+				
+				while(grUserRoles.next()){
+					this.recipients.push(grUserRoles.getValue('user'));
+				}
+			}
+		}
+	},
+	canReadAnnouncement: function (){
+		try{
+			if(gs.hasRole('x_idss_mobile_a_p.announcement_admin'))
+				return true;
+		
+			this._prepareRecipientList();
+			return this.recipients.toString().includes(''+gs.getUser().getID());
+		}catch(e){
+			gs.error(e);
+		}
+		return false;
+	},
+	type: 'MA_Pro_Announcement_Util'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-24 08:11:22</sys_created_on>
+        <sys_id>b5a2778cdbab3b00d475f9afaa96192c</sys_id>
+        <sys_mod_count>57</sys_mod_count>
+        <sys_name>MA_Pro_Announcement_Util</sys_name>
+        <sys_package display_value="Mobile Assist Pro" source="x_idss_mobile_a_p">23949784db6b3b00d475f9afaa96195a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Mobile Assist Pro">23949784db6b3b00d475f9afaa96195a</sys_scope>
+        <sys_update_name>sys_script_include_b5a2778cdbab3b00d475f9afaa96192c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-02 09:30:13</sys_updated_on>
+    </sys_script_include>
+</record_update>

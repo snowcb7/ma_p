@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" label="Announcement" max_length="40" name="x_idss_mobile_a_p_announcement" type="collection">
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element attributes="show_condition_count=true" dependent="table" dependent_on_field="table" label="Condition" max_length="4000" name="condition" type="conditions" use_dependent_field="true"/>
+        <element label="Message" max_length="4000" name="content" type="string"/>
+        <element hint="From when this announcement should be visible for the targeted audience" label="From" mandatory="true" max_length="40" name="from" type="glide_date_time"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Group" max_length="1024" name="group" reference="sys_user_group" type="glide_list"/>
+        <element display="true" hint="For internal use (to identify announcement) " label="Name" mandatory="true" max_length="255" name="name" type="string"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Roles" max_length="1024" name="roles" reference="sys_user_role" type="glide_list"/>
+        <element attributes="base_start=true" default="sys_user" label="Table" max_length="80" name="table" read_only="true" type="table_name"/>
+        <element label="Title" mandatory="true" max_length="255" name="title" type="string"/>
+        <element label="To" max_length="40" name="to" type="glide_date_time"/>
+        <element choice="1" label="Type" mandatory="true" max_length="40" name="type" reference="announcement_consumer_type" reference_qual="name=Email^ORname=Now Agents^EQ" reference_qual_condition="name=Email^ORname=Now Agents^EQ" type="glide_list">
+            <choice/>
+        </element>
+        <element label="Users" max_length="40" name="users" type="boolean"/>
+    </element>
+</database>

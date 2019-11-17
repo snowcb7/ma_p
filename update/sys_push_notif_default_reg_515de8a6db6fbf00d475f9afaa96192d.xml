@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_push_notif_default_reg">
+    <sys_push_notif_default_reg action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_push_notif_default_reg</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-31 12:10:05</sys_created_on>
+        <sys_event_email_action_id display_value="MA_Pro_Push_Announcement">e417138edbaf7f00d475f9afaa961942</sys_event_email_action_id>
+        <sys_id>515de8a6db6fbf00d475f9afaa96192d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Mobile Assist Pro" source="x_idss_mobile_a_p">23949784db6b3b00d475f9afaa96195a</sys_package>
+        <sys_policy/>
+        <sys_push_application_id display_value="ServiceNow Mobile Application">05ed2fb177002300258da2e2c81061c2</sys_push_application_id>
+        <sys_scope display_value="Mobile Assist Pro">23949784db6b3b00d475f9afaa96195a</sys_scope>
+        <sys_update_name>sys_push_notif_default_reg_515de8a6db6fbf00d475f9afaa96192d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-08-31 12:10:05</sys_updated_on>
+    </sys_push_notif_default_reg>
+</record_update>

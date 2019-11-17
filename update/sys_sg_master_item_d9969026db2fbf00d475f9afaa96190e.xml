@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_master_item">
+    <sys_sg_master_item action="INSERT_OR_UPDATE">
+        <condition/>
+        <condition_order/>
+        <item_view display_value="Announcement item view">f8965026db2fbf00d475f9afaa9619bb</item_view>
+        <name>Master Item</name>
+        <screen display_value="Announcements">4d965026db2fbf00d475f9afaa9619de</screen>
+        <sys_class_name>sys_sg_master_item</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-31 10:30:32</sys_created_on>
+        <sys_id>d9969026db2fbf00d475f9afaa96190e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Master Item</sys_name>
+        <sys_package display_value="Mobile Assist Pro" source="x_idss_mobile_a_p">23949784db6b3b00d475f9afaa96195a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Mobile Assist Pro">23949784db6b3b00d475f9afaa96195a</sys_scope>
+        <sys_update_name>sys_sg_master_item_d9969026db2fbf00d475f9afaa96190e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-08-31 10:30:32</sys_updated_on>
+        <table>x_idss_mobile_a_p_announcement</table>
+    </sys_sg_master_item>
+</record_update>

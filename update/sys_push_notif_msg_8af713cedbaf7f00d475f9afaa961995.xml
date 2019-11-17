@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_push_notif_msg">
+    <sys_push_notif_msg action="INSERT_OR_UPDATE">
+        <message_string>Announcement - ${title}</message_string>
+        <name>MA_Announcement</name>
+        <push_app display_value="ServiceNow Mobile Application">05ed2fb177002300258da2e2c81061c2</push_app>
+        <push_message_content display_value="MA_Announcement">d998d7cedbaf7f00d475f9afaa9619c6</push_message_content>
+        <subject/>
+        <sys_class_name>sys_push_notif_msg</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-30 11:20:01</sys_created_on>
+        <sys_id>8af713cedbaf7f00d475f9afaa961995</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>MA_Announcement</sys_name>
+        <sys_package display_value="Mobile Assist Pro" source="x_idss_mobile_a_p">23949784db6b3b00d475f9afaa96195a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Mobile Assist Pro">23949784db6b3b00d475f9afaa96195a</sys_scope>
+        <sys_update_name>sys_push_notif_msg_8af713cedbaf7f00d475f9afaa961995</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-08-30 11:21:43</sys_updated_on>
+        <table>x_idss_mobile_a_p_announcement</table>
+        <type>push</type>
+    </sys_push_notif_msg>
+</record_update>

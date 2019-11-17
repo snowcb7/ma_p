@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_screen_field">
+    <sys_sg_screen_field action="INSERT_OR_UPDATE">
+        <data_item_field_name>content</data_item_field_name>
+        <hidden>false</hidden>
+        <order>10</order>
+        <screen display_value="Details">11961026db2fbf00d475f9afaa9619af</screen>
+        <screen_data_item_table>x_idss_mobile_a_p_announcement</screen_data_item_table>
+        <sys_class_name>sys_sg_screen_field</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-31 10:53:01</sys_created_on>
+        <sys_id>f6bb982adb2fbf00d475f9afaa961999</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>content</sys_name>
+        <sys_package display_value="Mobile Assist Pro" source="x_idss_mobile_a_p">23949784db6b3b00d475f9afaa96195a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Mobile Assist Pro">23949784db6b3b00d475f9afaa96195a</sys_scope>
+        <sys_update_name>sys_sg_screen_field_f6bb982adb2fbf00d475f9afaa961999</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-08-31 10:53:01</sys_updated_on>
+        <type>auto</type>
+    </sys_sg_screen_field>
+</record_update>

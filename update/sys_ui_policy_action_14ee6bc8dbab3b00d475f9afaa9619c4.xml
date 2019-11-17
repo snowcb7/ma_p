@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>condition</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-24 07:50:59</sys_created_on>
+        <sys_id>14ee6bc8dbab3b00d475f9afaa9619c4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>condition</sys_name>
+        <sys_package display_value="Mobile Assist Pro" source="x_idss_mobile_a_p">23949784db6b3b00d475f9afaa96195a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Mobile Assist Pro">23949784db6b3b00d475f9afaa96195a</sys_scope>
+        <sys_update_name>sys_ui_policy_action_14ee6bc8dbab3b00d475f9afaa9619c4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-08-24 07:50:59</sys_updated_on>
+        <table>x_idss_mobile_a_p_announcement</table>
+        <ui_policy display_value="Show/Hide User condition">347ee3c8dbab3b00d475f9afaa9619b7</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+</record_update>

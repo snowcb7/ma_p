@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="announcement_consumer_type">
+    <announcement_consumer_type action="INSERT_OR_UPDATE">
+        <name>Email</name>
+        <sys_class_name>announcement_consumer_type</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-24 06:38:01</sys_created_on>
+        <sys_id>672e978cdb6b3b00d475f9afaa9619f4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Email</sys_name>
+        <sys_package display_value="Mobile Assist Pro" source="x_idss_mobile_a_p">23949784db6b3b00d475f9afaa96195a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Mobile Assist Pro">23949784db6b3b00d475f9afaa96195a</sys_scope>
+        <sys_update_name>announcement_consumer_type_672e978cdb6b3b00d475f9afaa9619f4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-08-24 06:38:14</sys_updated_on>
+    </announcement_consumer_type>
+</record_update>
